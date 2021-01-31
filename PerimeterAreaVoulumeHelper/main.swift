@@ -30,64 +30,64 @@ var shapeInput = readLine()!
 
 switch shapeInput {
 case "1":
-    print("What is the radius of the cylinder?")
+    print("What is the radius of the cylinder in cm?")
     
 let cylinderRadius = readLine()!
     
-    print("What is the hight of the cylinder?")
+    print("What is the hight of the cylinder in cm?")
     
 let cylinderHight = readLine()!
     
     let puti = surfaceArea( r: Double(cylinderRadius)!, h: Double(cylinderHight)!)
 
-    print("The surface are of the cylinder was \(puti)")
+    print("The surface are of the cylinder was \(puti)cm^2")
     
 case "2":
-    print("What is the radius of the phere?")
+    print("What is the radius of the sphere in cm?")
     let sphereRadius = readLine()!
     let puti = sphereSurfaceArea( r: Double(sphereRadius)!)
-    print("The surface area of your sphere was \(puti) ")
+    print("The surface area of your sphere was \(puti)cm^2 ")
     
 case "3":
-    print("What is the radius of the cone?")
+    print("What is the radius of the cone in cm?")
     let coneRadius = readLine()!
-    print("What is the Side Length of the cone?")
+    print("What is the Side Length of the cone in cm?")
     let coneSide = readLine()!
     
 let puti = coneSurfaceArea( r: Double(coneRadius)!, s: Double(coneSide)!)
-    print("The surface area of your cone is \(puti)")
+    print("The surface area of your cone is \(puti)cm^2")
     
 case "4":
-    print("What is the b length for the Squarebased pyramid")
+    print("What is the b length for the Squarebased pyramid in cm")
     let pyramidB = readLine()!
-    print("What is the side length of the pyrimid")
+    print("What is the side length of the pyrimid in cm")
     let pyramidSide = readLine()!
     let puti = pyramidSurfaceArea( b: Double(pyramidB)!, s: Double(pyramidSide)!)
-    print("The surface area of the SquareBased pyrimid is \(puti)")
+    print("The surface area of the SquareBased pyrimid is \(puti)cm^2")
     
 case "5":
-    print("What is the width of the Rectangular prism")
+    print("What is the width of the Rectangular prism in cm?")
     let widthRectangle = readLine()!
-    print("What is the hight of the Rectangular prism")
+    print("What is the hight of the Rectangular prism in cm?")
     let hightRectangle = readLine()!
-    print("What is the length of the Rectangular prism")
+    print("What is the length of the Rectangular prism in cm?")
     let lengthRectangle = readLine()!
     let puti = rectangularPrismSurfaceArea( w: Double(widthRectangle)!, h: Double(hightRectangle)!, l: Double(lengthRectangle)!)
-    print("The surface area of the Rectangular Prism is \(puti)")
+    print("The surface area of the Rectangular Prism is \(puti)cm^2")
     
 case "6":
-    print("What is the length of the prisms face's")
+    print("What is the length of the prisms face's in cm?")
     let prismFaceLength = readLine()!
-    print("What is the hight of Triangular prism")
+    print("What is the hight of Triangular prism in cm?")
     let prismHight = readLine()!
-    print("What is the length of value a")
+    print("What is the length of value a in cm?")
     let prismSideA = readLine()!
-    print("What is the length of value b")
+    print("What is the length of value b in cm?")
     let prismSideB = readLine()!
-    print("What is the length of value c")
+    print("What is the length of value c in cm?")
     let prismSideC = readLine()!
     let puti = triangularPrismSurfaceArea( l: Double(prismFaceLength)!, h: Double(prismHight)!, a: Double(prismSideA)!, b: Double(prismSideB)!, c: Double(prismSideC)!)
-    print("The surface area of the Triangular Prism is \(puti)")
+    print("The surface area of the Triangular Prism is \(puti)cm^2")
     
 default:
     break
