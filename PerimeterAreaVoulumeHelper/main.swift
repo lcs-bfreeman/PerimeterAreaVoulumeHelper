@@ -13,37 +13,45 @@ import Foundation
 print("Surface Area Calculator")
 print("```````````````````````")
 print(",,,,,,,,,,,,,,,,,,,,,,,", terminator: "")
-print("Type the shape you would like to calculate", terminator: "")
+print("Type the corisponding number for the shape you would like to calculate", terminator: "")
+print ("\n")
 print("""
       Cylinder: 1
-
-
-    
-    
-    
-    
-    
-    
-    
+      Sphere: 2
+      Cone: 3
     """)
 
 var shapeInput = readLine()!
 
-var cylinderRadius = 0.0
-var cylinderHight = 0.0
 
 switch shapeInput {
 case "1":
-    print("What is the radius")
+    print("What is the radius of the cylinder?")
     
-var cylinderRadius = readLine()!
+let cylinderRadius = readLine()!
     
-    print("What is the hight")
+    print("What is the hight of the cylinder?")
     
-var cylinderHight = readLine()!
+let cylinderHight = readLine()!
     
-    let puti = surfaceArea( r: cylinderRadius, h: cylinderHight)
+    let puti = SurfaceArea( r: Double(cylinderRadius)!, h: Double(cylinderHight)!)
 
+    print("The surface are of the cylinder was \(puti)")
+    
+case "2":
+    print("What is the radius of the phere?")
+    let sphereRadius = readLine()!
+    let puti = sphereSurfaceArea( r: Double(sphereRadius)!)
+    print("The surface area of the sphere was \(puti) ")
+    
+case "3":
+    print("What is the radius of the cone?")
+    let coneRadius = readLine()!
+    print("What is the Side Length of the cone?")
+    let coneSide = readLine()!
+    
+let puti = coneSurfaceArea( r: Double(coneSide)!, s: Double(coneRadius)!)
+    print("The surface area of your cone is \(puti)")
     
 default:
     break
@@ -53,14 +61,24 @@ default:
 
 
 // MARK: Functions
-func surfaceArea( r: Double, h: Double) -> Double {
-    return Double.pi * pow(r, 2.0) + Double.pi * pow(r, 2.0) * h
+func SurfaceArea( r: Double, h: Double) -> Double {
+    
+    return Double.pi * pow(r, 2.0) * r + Double.pi * pow(r, 2.0) * h
 }
+func sphereSurfaceArea( r: Double ) -> Double {
     
+    return Double.pi * pow(r, 4.0) * r
+}
+
+func coneSurfaceArea( r: Double, s: Double) -> Double {
     
-    
-        
-   
+    return Double.pi * pow(r, r) + Double.pi * pow(r, s)
+}
+
+//func SurfaceArea( r: Double, h: Double) -> Double {
+//
+//        return
+//}
 
 
 let givenLength = 10.0 // seting double using type infrence
