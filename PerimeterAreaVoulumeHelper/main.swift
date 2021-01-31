@@ -13,12 +13,15 @@ import Foundation
 print("Surface Area Calculator")
 print("```````````````````````")
 print(",,,,,,,,,,,,,,,,,,,,,,,", terminator: "")
-print("Type the corisponding number for the shape you would like to calculate", terminator: "")
+print("Type the corisponding number for the shape you would like to calculate the surface area for", terminator: "")
 print ("\n")
 print("""
       Cylinder: 1
       Sphere: 2
       Cone: 3
+      Squarebased pyramid: 4
+      Rectangular prism: 5
+      Triangular prism: 6
     """)
 
 var shapeInput = readLine()!
@@ -34,7 +37,7 @@ let cylinderRadius = readLine()!
     
 let cylinderHight = readLine()!
     
-    let puti = SurfaceArea( r: Double(cylinderRadius)!, h: Double(cylinderHight)!)
+    let puti = surfaceArea( r: Double(cylinderRadius)!, h: Double(cylinderHight)!)
 
     print("The surface are of the cylinder was \(puti)")
     
@@ -53,6 +56,38 @@ case "3":
 let puti = coneSurfaceArea( r: Double(coneSide)!, s: Double(coneRadius)!)
     print("The surface area of your cone is \(puti)")
     
+case "4":
+    print("What is the b length for the Squarebased pyramid")
+    let pyramidB = readLine()!
+    print("What is the side length of the pyrimid")
+    let pyramidSide = readLine()!
+    let puti = pyramidSurfaceArea( b: Double(pyramidB)!, s: Double(pyramidSide)!)
+    print("The surface area of the SquareBased pyrimid is \(puti)")
+    
+case "5":
+    print("What is the width of the Rectangular prism")
+    let widthRectangle = readLine()!
+    print("What is the hight of the Rectangular prism")
+    let hightRectangle = readLine()!
+    print("What is the length of the Rectangular prism")
+    let lengthRectangle = readLine()!
+    let puti = rectangularPrismSurfaceArea( w: Double(widthRectangle)!, h: Double(hightRectangle)!, l: Double(lengthRectangle)!)
+    print("The surface area of the Rectangular Prism is \(puti)")
+    
+case "6":
+    print("What is the length of the prisms face's")
+    let prismFaceLength = readLine()!
+    print("What is the hight of Triangular prism")
+    let prismHight = readLine()!
+    print("What is the length of value a")
+    let prismSideA = readLine()!
+    print("What is the length of value b")
+    let prismSideB = readLine()!
+    print("What is the length of value c")
+    let prismSideC = readLine()!
+    let puti = triangularPrismSurfaceArea( l: Double(prismFaceLength)!, h: Double(prismHight)!, a: Double(prismSideA)!, b: Double(prismSideB)!, c: Double(prismSideC)!)
+    print("The surface area of the Triangular Prism is \(puti)")
+    
 default:
     break
 }
@@ -61,7 +96,7 @@ default:
 
 
 // MARK: Functions
-func SurfaceArea( r: Double, h: Double) -> Double {
+func surfaceArea( r: Double, h: Double) -> Double {
     
     return Double.pi * pow(r, 2.0) * r + Double.pi * pow(r, 2.0) * h
 }
@@ -75,10 +110,20 @@ func coneSurfaceArea( r: Double, s: Double) -> Double {
     return Double.pi * pow(r, r) + Double.pi * pow(r, s)
 }
 
-//func SurfaceArea( r: Double, h: Double) -> Double {
-//
-//        return
-//}
+func pyramidSurfaceArea( b: Double, s: Double) -> Double {
+
+    return b * b + 2.0 * b * s
+}
+
+func rectangularPrismSurfaceArea( w: Double, h: Double, l: Double) -> Double {
+
+        return 2 * w * h + l * w + l * h
+}
+
+func triangularPrismSurfaceArea( l: Double, h: Double, a: Double, b: Double, c: Double) -> Double {
+
+        return b * l + a * h + b * h + c * h
+}
 
 
 let givenLength = 10.0 // seting double using type infrence
