@@ -13,6 +13,7 @@ import Foundation
 print("Surface Area Calculator")
 print("```````````````````````")
 print(",,,,,,,,,,,,,,,,,,,,,,,", terminator: "")
+print ("\n")
 print("Type the corisponding number for the shape you would like to calculate the surface area for", terminator: "")
 print ("\n")
 print("""
@@ -45,7 +46,7 @@ case "2":
     print("What is the radius of the phere?")
     let sphereRadius = readLine()!
     let puti = sphereSurfaceArea( r: Double(sphereRadius)!)
-    print("The surface area of the sphere was \(puti) ")
+    print("The surface area of your sphere was \(puti) ")
     
 case "3":
     print("What is the radius of the cone?")
@@ -53,7 +54,7 @@ case "3":
     print("What is the Side Length of the cone?")
     let coneSide = readLine()!
     
-let puti = coneSurfaceArea( r: Double(coneSide)!, s: Double(coneRadius)!)
+let puti = coneSurfaceArea( r: Double(coneRadius)!, s: Double(coneSide)!)
     print("The surface area of your cone is \(puti)")
     
 case "4":
@@ -102,7 +103,7 @@ func surfaceArea( r: Double, h: Double) -> Double {
 }
 func sphereSurfaceArea( r: Double ) -> Double {
     
-    return Double.pi * pow(r, 4.0) * r
+    return Double.pi * pow(r, r) * 4.0
 }
 
 func coneSurfaceArea( r: Double, s: Double) -> Double {
@@ -117,7 +118,7 @@ func pyramidSurfaceArea( b: Double, s: Double) -> Double {
 
 func rectangularPrismSurfaceArea( w: Double, h: Double, l: Double) -> Double {
 
-        return 2 * w * h + l * w + l * h
+    return 2.0 * (w * h + l * w + l * h)
 }
 
 func triangularPrismSurfaceArea( l: Double, h: Double, a: Double, b: Double, c: Double) -> Double {
@@ -148,8 +149,6 @@ func areaOfCircle(radius: Double) -> Double {
 
 
 
-// MARK: Process
-
 
 // MARK: Output
-
+//I wrote all of the call sites into the switch statments
