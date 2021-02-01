@@ -87,12 +87,12 @@ case "6":
     print("What is the length of value c in cm?")
     let prismSideC = readLine()!
     let puti = triangularPrismSurfaceArea( l: Double(prismFaceLength)!, h: Double(prismHight)!, a: Double(prismSideA)!, b: Double(prismSideB)!, c: Double(prismSideC)!)
+    
     print("The surface area of the Triangular Prism is \(puti)cm^2")
     
 default:
     break
 }
-
 
 
 
